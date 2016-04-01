@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="ng-promises-app">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        crossorigin="anonymous"/>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+  <link href="css/app.css" rel="stylesheet" type="text/css"/>
+  <!-- vendor libs -->
+  <script src="lib/latinise.js"></script>
+  <script src="lib/underscore.js"></script>
+  <script src="lib/underscore.string.js"></script>
+  <script src="lib/jquery.js"></script>
+  <script src="lib/angular.js"></script>
+  <script src="lib/angular-ui-router.js"></script>
+  <!-- app src -->
+  <script src="src/app.js"></script>
+  <!-- shared -->
+  <script src="src/shared/constants/routeStates.js"></script>
+  <script src="src/shared/services/menu-items.service.js"></script>
+  <script src="src/shared/services/random-between.service.js"></script>
+  <script src="src/shared/controllers/top-bar.controller.js"></script>
+  <!-- Dashboard -->
+  <script src="src/dashboard/dashboard-page.controller.js"></script>
+  <!-- Basics -->
+  <script src="src/basics/basics-page.controller.js"></script>
+  <!-- Debt -->
+  <script src="src/debt/debt-page.controller.js"></script>
+  <!-- GeoLocation -->
+  <script src="src/geo-location/geo-locator.service.js"></script>
+  <script src="src/geo-location/gmaps.service.js"></script>
+  <script src="src/geo-location/geo-location-page.controller.js"></script>
+  <!-- speech-synthesis -->
+  <script src="src/speech-synthesis/speaker.service.js"></script>
+  <script src="src/speech-synthesis/speech-synthesis-page.controller.js"></script>
+  <!-- time-game -->
+  <script src="src/time-game/time-game.service.js"></script>
+  <script src="src/time-game/rm-time-game.directive.js"></script>
+  <script src="src/time-game/time-game-page.controller.js"></script>
+  <!-- ConfirmDialog -->
+  <script src="src/confirm-dialog/confirm-dialog.service.js"></script>
+  <script src="src/confirm-dialog/rm-confirm-dialog.directive.js"></script>
+  <script src="src/confirm-dialog/confirm-dialog-page.controller.js"></script>
+  <!-- battery-charging -->
+  <script src="src/battery-charging/battery.service.js"></script>
+  <script src="src/battery-charging/battery-charging-page.controller.js"></script>
+  <!-- weather-forecast -->
+  <script src="src/weather-forecast/open-weather.service.js"></script>
+  <script src="src/weather-forecast/full-weather.service.js"></script>
+  <script src="src/weather-forecast/weather-forecast-page.controller.js"></script>
+
+  <!-- routes -->
+  <script src="src/routes.js"></script>
+</head>
+<body>
+<nav ng-controller="TopBarController" class="navbar navbar-default">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li ng-repeat="item in menuItems">
+        <a ui-sref="{{item.state}}">{{item.label}}</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class='container'>
+  <div ui-view></div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    &copy; Copyright Piotr Woloszun
+  </div>
+</nav>
+
+</body>
+</html>
