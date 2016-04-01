@@ -1,6 +1,19 @@
 App.factory("confirmDialog", [
-  function () {
+  "$q",
+  function ($q) {
+    //TODO
+    var confirmDialog = {
+      isOpened: false,
+      on: function (eventName, fn) {
+      },
+      open: function (message) {
+      },
+      confirm: function () {
+      },
+      cancel: function () {
+      }
+    };
 
-    return null;
+    return confirmDialog;
   }
 ]);

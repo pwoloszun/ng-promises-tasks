@@ -1,6 +1,17 @@
 App.controller("ConfirmDialogPageController", [
   "$scope",
-  function ($scope) {
-    
+  "confirmDialog",
+  function ($scope, confirmDialog) {
+
+    $scope.openConfirm = function () {
+      confirmDialog.open("Want some coffee?").then(function () {
+        $scope.result = "YES";
+
+      }, function () {
+        $scope.result = "NO";
+
+      });
+    };
+
   }
 ]);
