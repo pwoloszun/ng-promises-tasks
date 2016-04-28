@@ -21,3 +21,8 @@ App.factory("speaker", [
     return speaker;
   }
 ]);
+
+//TODO API
+// $window.speechSynthesis.onvoiceschanged = function () {
+//   var voices = $window.speechSynthesis.getVoices();
+// };
